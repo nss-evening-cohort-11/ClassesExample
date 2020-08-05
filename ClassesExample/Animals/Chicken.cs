@@ -16,9 +16,10 @@ namespace ClassesExample.Animals
         //public Chicken() { }
 
         //constructor
-        public Chicken(string name)
+        public Chicken(string name, bool isHungry)
         {
             Name = name;
+            _isHungry = isHungry;
             Console.WriteLine($"{name} got instantiated...");
         }
 
@@ -35,5 +36,12 @@ namespace ClassesExample.Animals
                 Console.WriteLine($"{Name} is not hungry.");
             }
         }
+
+        //method overloading
+        public void Peck()
+        {    
+            Peck("Corn");
+        }
+
     }
 }

@@ -7,8 +7,8 @@ namespace ClassesExample
     {
         static void Main(string[] args)
         {
-            var chicken = new Chicken("Liza");
-            var bob = new Chicken("Bob");
+            var chicken = new Chicken("Liza",false);
+            var bob = new Chicken("Bob",true);
             
             chicken.Peck("corn");
             chicken.Peck("corn");
@@ -26,10 +26,34 @@ namespace ClassesExample
             chicken.Peck("corn");
 
 
-            bob.Peck("watermelon");
+            bob.Peck();
 
             Console.WriteLine($"{chicken.Name} and {bob.Name} are chickens......" );
 
+
+            var llama = new Llama(3,"brown") 
+            {
+                Spits = true
+            };
+
+            llama.Dye("Blue");
+
+
+            //object initializer
+            var cat = new Cat()
+            {
+                IsFeral = true,
+                Color = CatColor.Tabby,
+                BestFriend = bob
+            };
+            
+            cat.Color = CatColor.Tabby;
+            cat.BestFriend = bob;
+
+            cat.HaveASnack();
+
+            Console.WriteLine($"the cat is {cat.Color}");
+    
 
         }
     }
